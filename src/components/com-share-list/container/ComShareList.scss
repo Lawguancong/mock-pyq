@@ -1,0 +1,123 @@
+.s-share-list__content {
+    &__slider {
+        .slider-list{
+            min-height: 200px;
+        }
+        .slider-slide{ 
+            display:flex !important;
+            justify-content:center;
+            align-items:center;
+        }
+    }
+    &__postTime {
+        font-size: 12px;
+    }
+    &__location {
+        font-size: 14px;
+    }
+    &__video-img-cover{
+        position: absolute;
+        width: 100%;
+        padding-top: 56.25%;
+        background: #1074e90d;
+        top: 0;
+        left: 0;
+    }
+}
+
+.square-1 {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* padding百分比是相对父元素宽度计算的 */
+}
+.square-inner-1 > li{
+    width: calc(98%/ 3); /* calc里面的运算符两边要空格 */
+    height: calc(98%);
+    margin-right: 1%;
+    margin-bottom: 1%;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #e1e1e182;
+    border-radius: 5px;
+    & > img {
+        height: 100%; 
+    }
+}
+
+.square-3 {
+    position: relative;
+    width: 100%;
+    padding-bottom: 33.3%; /* padding百分比是相对父元素宽度计算的 */
+}
+.square-inner-3 > li{
+    width: calc(98%/ 3); /* calc里面的运算符两边要空格 */
+    height: calc(98%);
+    margin-right: 1%;
+    margin-bottom: 1%;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #e1e1e182;
+    border-radius: 5px;
+    & > img {
+        height: 100%; 
+    }
+}
+
+.square-6 {
+    position: relative;
+    width: 100%;
+    padding-bottom: 66.6%; /* padding百分比是相对父元素宽度计算的 */
+}
+.square-inner-6 > li{
+    width: calc(98%/ 3); /* calc里面的运算符两边要空格 */
+    height: calc(98%/ 2);
+    margin-right: 1%;
+    margin-bottom: 1%;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #e1e1e182;
+    border-radius: 5px;
+    & > img {
+        height: 100%; 
+    }
+}
+
+.square-9 {
+    position: relative;
+    padding-bottom: 100%; /* padding百分比是相对父元素宽度计算的 */
+}
+.square-inner-9 > li{
+    width: calc(98%/ 3); /* calc里面的运算符两边要空格 */
+    height: calc(98%/ 3);
+    margin-right: 1%;
+    margin-bottom: 1%;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #e1e1e182;
+    border-radius: 5px;
+    & > img {
+        height: 100%; 
+    }
+}
+
+ 
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
+    height: 100%; /* 铺满父元素容器，这时候宽高就始终相等了 */
+    padding: 0;
+    margin: 0;
+}
+.flex > li{
+    flex-grow: 1; /* 子元素按1/n的比例进行拉伸 */
+    text-align: center;
+}
+.flex > li:nth-of-type(3n){ /* 选择个数是3的倍数的元素 */
+    margin-right: 0;
+}
+.flex > li:nth-of-type(n+7){ /* 选择倒数的三个元素，n可以取0 */
+    margin-bottom: 0;
+}
+

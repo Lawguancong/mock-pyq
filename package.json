@@ -1,31 +1,280 @@
 {
-  "name": "life",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "mock-pyq",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.4",
+        "@babel/node": "^7.2.2",
+        "@babel/plugin-proposal-decorators": "^7.4.4",
+        "@babel/polyfill": "^7.4.4",
+        "@babel/preset-env": "^7.4.4",
+        "@babel/preset-react": "^7.0.0",
+        "@svgr/webpack": "4.1.0",
+        "@typescript-eslint/eslint-plugin": "1.6.0",
+        "@typescript-eslint/parser": "1.6.0",
+        "ali-oss": "^6.1.1",
+        "antd-mobile": "^2.2.13",
+        "axios": "^0.18.0",
+        "babel-eslint": "10.0.1",
+        "babel-jest": "^24.8.0",
+        "babel-loader": "^8.0.5",
+        "babel-plugin-import": "^1.11.0",
+        "babel-plugin-named-asset-import": "^0.3.2",
+        "babel-preset-react-app": "^9.0.0",
+        "body-parser": "^1.19.0",
+        "camelcase": "^5.2.0",
+        "case-sensitive-paths-webpack-plugin": "2.2.0",
+        "classnames": "^2.2.6",
+        "cookie-parser": "^1.4.4",
+        "css-loader": "2.1.1",
+        "dotenv": "6.2.0",
+        "dotenv-expand": "4.2.0",
+        "es-checker": "^1.4.1",
+        "eslint": "^5.16.0",
+        "eslint-config-react-app": "^4.0.1",
+        "eslint-loader": "2.1.2",
+        "eslint-plugin-flowtype": "2.50.1",
+        "eslint-plugin-import": "2.16.0",
+        "eslint-plugin-jsx-a11y": "6.2.1",
+        "eslint-plugin-react": "7.12.4",
+        "eslint-plugin-react-hooks": "^1.5.0",
+        "esm": "^3.2.25",
+        "express": "^4.16.4",
+        "file-loader": "3.0.1",
+        "fs-extra": "7.0.1",
+        "html-webpack-plugin": "4.0.0-beta.5",
+        "http-proxy-middleware": "^0.19.1",
+        "identity-obj-proxy": "3.0.0",
+        "is-wsl": "^1.1.0",
+        "jest": "24.7.1",
+        "jest-environment-jsdom-fourteen": "0.1.0",
+        "jest-resolve": "24.7.1",
+        "jest-watch-typeahead": "0.3.0",
+        "lodash": "^4.17.11",
+        "mini-css-extract-plugin": "0.5.0",
+        "moment": "^2.24.0",
+        "mongo": "^0.1.0",
+        "mongodb": "^3.2.4",
+        "mongoose": "^5.5.7",
+        "node-sass": "^4.12.0",
+        "nodemon": "^1.19.0",
+        "optimize-css-assets-webpack-plugin": "5.0.1",
+        "pnp-webpack-plugin": "1.2.1",
+        "postcss-flexbugs-fixes": "4.1.0",
+        "postcss-loader": "3.0.0",
+        "postcss-normalize": "7.0.1",
+        "postcss-preset-env": "6.6.0",
+        "postcss-safe-parser": "4.0.1",
+        "prop-types": "^15.7.2",
+        "rc-viewer": "^0.0.9",
+        "react": "^16.8.6",
+        "react-amap": "^1.2.8",
+        "react-app-polyfill": "^1.0.1",
+        "react-dev-utils": "^9.0.1",
+        "react-dom": "^16.8.6",
+        "react-loadable": "^5.5.0",
+        "react-player": "^1.12.0",
+        "react-redux": "^7.0.3",
+        "react-router-dom": "^5.0.0",
+        "reactjs-player": "^0.6.0",
+        "redux": "^4.0.1",
+        "redux-thunk": "^2.3.0",
+        "resolve": "1.10.0",
+        "sass-loader": "7.1.0",
+        "semver": "6.0.0",
+        "style-loader": "0.23.1",
+        "terser-webpack-plugin": "1.2.3",
+        "ts-pnp": "1.1.2",
+        "url-loader": "1.1.2",
+        "video-react": "^0.14.1",
+        "webpack": "4.29.6",
+        "webpack-dev-server": "3.2.1",
+        "webpack-manifest-plugin": "2.0.4",
+        "workbox-webpack-plugin": "4.2.0"
+    },
+    "scripts": {
+        "start": "node scripts/start.js",
+        "dev": "node scripts/start.js",
+        "build": "node scripts/build.js",
+        "test": "node scripts/test.js",
+        "eslint": "eslint src",
+        "server____": "nodemon server/index.js",
+        "server": "NODE_ENV=test nodemon --exec babel-node - server/index.js",
+        "es-checker": "es-checker"
+    },
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "commonjs": true,
+            "es6": true,
+            "node": true
+        },
+        "extends": [
+            "eslint:recommended"
+        ],
+        "globals": {
+            "Atomics": "readonly",
+            "SharedArrayBuffer": "readonly"
+        },
+        "parser": "babel-eslint",
+        "parserOptions": {
+            "ecmaFeatures": {
+                "jsx": true
+            },
+            "ecmaVersion": 2018,
+            "sourceType": "module"
+        },
+        "plugins": [
+            "react"
+        ],
+        "rules": {
+            "no-useless-escape": 0,
+            "no-unused-vars": 0,
+            "no-extra-semi": 0,
+            "no-unexpected-multiline": 1,
+            "no-empty": 0,
+            "no-case-declarations": 0,
+            "no-useless-catch": 0,
+            "no-console": 0,
+            "no-duplicate-imports": 2,
+            "no-var": 2,
+            "no-multi-spaces": 1,
+            "no-multiple-empty-lines": 1,
+            "no-else-return": "off",
+            "no-dupe-keys": 2,
+            "no-duplicate-case": 1,
+            "no-trailing-spaces": 0,
+            "no-plusplus": "off",
+            "no-continue": 1,
+            "no-unused-expressions": [
+                "error",
+                {
+                    "allowShortCircuit": true,
+                    "allowTernary": true
+                }
+            ],
+            "no-nested-ternary": 0,
+            "no-unneeded-ternary": 0,
+            "no-alert": 0,
+            "no-cond-assign": 0,
+            "no-dupe-args": 2,
+            "no-extra-boolean-cast": 2,
+            "no-func-assign": 2,
+            "no-loop-func": 2,
+            "no-redeclare": 2,
+            "no-undef": 2,
+            "func-names": 0,
+            "max-len": [
+                2,
+                300,
+                4
+            ],
+            "indent": [
+                1,
+                4,
+                {
+                    "SwitchCase": 1
+                }
+            ],
+            "space-before-blocks": 2,
+            "keyword-spacing": 2,
+            "strict": [
+                0,
+                "global"
+            ],
+            "one-var": "off",
+            "prefer-const": 0,
+            "object-shorthand": 1,
+            "semi": 0,
+            "global-require": 1,
+            "eqeqeq": 2,
+            "react/jsx-indent": [
+                2,
+                4
+            ],
+            "react/jsx-indent-props": [
+                2,
+                4
+            ],
+            "react/jsx-filename-extension": [
+                1,
+                {
+                    "extensions": [
+                        ".js",
+                        ".jsx"
+                    ]
+                }
+            ],
+            "jsx-a11y/label-has-for": "off",
+            "react/jsx-boolean-value": "off",
+            "react/prefer-stateless-function": "off",
+            "jsx-a11y/no-static-element-interactions": "off",
+            "react/forbid-prop-types": "off",
+            "jsx-a11y/anchor-has-content": [
+                0
+            ],
+            "react/jsx-uses-react": 1,
+            "react/jsx-uses-vars": 1,
+            "no-useless-constructor": 1
+        }
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "jest": {
+        "collectCoverageFrom": [
+            "src/**/*.{js,jsx,ts,tsx}",
+            "!src/**/*.d.ts"
+        ],
+        "setupFiles": [
+            "react-app-polyfill/jsdom"
+        ],
+        "setupFilesAfterEnv": [],
+        "testMatch": [
+            "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+            "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+        ],
+        "testEnvironment": "jest-environment-jsdom-fourteen",
+        "transform": {
+            "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+            "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+            "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+        },
+        "transformIgnorePatterns": [
+            "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+            "^.+\\.module\\.(css|sass|scss)$"
+        ],
+        "modulePaths": [],
+        "moduleNameMapper": {
+            "^react-native$": "react-native-web",
+            "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+        },
+        "moduleFileExtensions": [
+            "web.js",
+            "js",
+            "web.ts",
+            "ts",
+            "web.tsx",
+            "tsx",
+            "json",
+            "web.jsx",
+            "jsx",
+            "node"
+        ],
+        "watchPlugins": [
+            "jest-watch-typeahead/filename",
+            "jest-watch-typeahead/testname"
+        ]
+    },
+    "_moduleAliases": {}
 }
